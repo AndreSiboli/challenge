@@ -1,0 +1,31 @@
+@use '@/styles/_dirs/variables';
+@use '@/styles/_dirs/mixins' as mix;
+
+.link {
+    width: fit-content;
+    position: relative;
+    font-size: 1em;
+    font-weight: 600;
+    transition: 0.25s ease-in-out;
+    padding-bottom: 0.1em;
+
+    @include mix.nonMobile {
+        &:hover {
+            &:after {
+                width: 100%;
+                left: 0;
+            }
+        }
+
+        &:after {
+            content: '';
+            width: 0;
+            height: 1px;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            background: #0f121a;
+            transition: 0.25s ease-in-out;
+        }
+    }
+}

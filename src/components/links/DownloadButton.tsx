@@ -10,8 +10,8 @@ export default function LinkEffect(props: PropTypes) {
     const { content, archive } = props;
 
     return (
-        <Link className={styles.link} href={archive} download target='_blank'>
-            {content}
+        <Link className={styles.link} href={archive} download target="_blank">
+            <span>{content}</span>
         </Link>
     );
 }

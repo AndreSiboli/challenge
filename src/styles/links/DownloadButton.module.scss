@@ -9,10 +9,30 @@
     border-radius: 1em;
     transition: 0.25s ease-in-out;
     width: fit-content;
+    position: relative;
+    overflow: hidden;
+
+    span {
+        position: relative;
+        transition: 0.2s ease-in-out;
+        z-index: 4;
+    }
 
     @include mix.nonMobile {
+        &:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 100%;
+            top: 0;
+            left: 0;
+            transition: 0.25s ease-in-out;
+        }
         &:hover {
-            background-color: lighten($color: variables.$secondary-color, $amount: 20%);
+            &:after {
+                width: 100%;
+                background-color: variables.$accent-color;
+            }
         }
     }
 }
